@@ -1,0 +1,43 @@
+{
+  "name": "mini-social-app-server",
+  "version": "1.0.0",
+  "description": "Backend server for Mini Social App",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "nodemon --ignore-config --watch src --watch server.ts --ext ts,js,json --exec \"npx ts-node --esm server.ts\"",
+    "dev-compile": "npx tsc && node dist/server.js",
+    "dev-watch": "nodemon --watch src --watch server.ts --ext ts --exec \"npm run dev-compile\"",
+    "dev-simple": "npx ts-node --esm server.ts",
+    "start": "npx ts-node --esm server.ts",
+    "build": "npx tsc",
+    "build:start": "npx tsc && node dist/server.js",
+    "type-check": "npx tsc --noEmit",
+    "lint": "echo \"Linting not configured\"",
+    "test": "echo \"Tests not implemented\""
+  },
+  "keywords": ["express", "social-app"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/cors": "^2.8.13",
+    "@types/uuid": "^9.0.2",
+    "@types/node": "^20.4.5",
+    "@types/compression": "^1.7.5",
+    "typescript": "^5.1.6",
+    "ts-node": "^10.9.1",
+    "nodemon": "^3.0.1"
+  },
+  "ts-node": {
+    "esm": true
+  }
+}

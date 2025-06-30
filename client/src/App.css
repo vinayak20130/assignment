@@ -1,0 +1,346 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 5px 0 0 0;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-card {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #333;
+}
+
+.coin-balance {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.coin-balance h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #ff6b35;
+}
+
+.coin-balance .coins {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+
+.coin-packs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.coin-pack {
+  background: white;
+  border: 2px solid #ff6b35;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.coin-pack:hover {
+  background: #ff6b35;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.coin-pack .coins {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.coin-pack .price {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.coin-pack .bonus {
+  font-size: 10px;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.transaction-history h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction:last-child {
+  border-bottom: none;
+}
+
+.transaction .amount.credit {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.transaction .amount.debit {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.transaction .date {
+  font-size: 12px;
+  color: #666;
+}
+
+.games-lobby h2 {
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: #333;
+}
+
+.game-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.game-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.2);
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.game-icon {
+  font-size: 32px;
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+
+.game-info h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.game-info p {
+  margin: 5px 0 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.entry-cost {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.players-count {
+  color: #666;
+  font-size: 14px;
+}
+
+.join-button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.join-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  border-left: 4px solid #dc2626;
+}
+
+.success-message {
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  border-left: 4px solid #16a34a;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+  font-style: italic;
+}
+
+.game-screen {
+  text-align: center;
+  padding: 20px;
+}
+
+.game-screen h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.game-placeholder {
+  background: #f3f4f6;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 40px 20px;
+  margin: 20px 0;
+  color: #6b7280;
+}
+
+.game-placeholder h3 {
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.game-placeholder p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.back-button {
+  background: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background: #4b5563;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .app {
+    padding: 10px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .coin-packs {
+    grid-template-columns: 1fr;
+  }
+  
+  .game-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .game-icon {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "mini-social-app",
+  "version": "1.0.0",
+  "main": "server/server.ts",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev-watch\" \"npm run client:dev\"",
+    "dev-ts": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "start": "npm run server:start",
+    "server:dev": "cd server && npm run dev",
+    "server:dev-watch": "cd server && npm run dev-watch",
+    "server:dev-simple": "cd server && npm run dev-simple",
+    "server:start": "cd server && npm start",
+    "server:install": "cd server && npm install",
+    "client:dev": "cd client && npm start",
+    "client:build": "cd client && npm run build",
+    "client:install": "cd client && npm install",
+    "setup": "npm install && npm run server:install && npm run client:install",
+    "clean": "rm -rf node_modules server/node_modules client/node_modules",
+    "clean:install": "npm run clean && npm run setup",
+    "lint": "echo \"Linting not configured yet\"",
+    "test": "echo \"Tests not implemented yet\"",
+    "build": "npm run client:build",
+    "postinstall": "echo \"Main dependencies installed successfully\""
+  },
+  "keywords": ["social-app", "gaming", "wallet", "react", "node"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "description": "Mini Social App Feature Module with Game Lobby and Wallet System"
+}

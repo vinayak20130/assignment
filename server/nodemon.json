@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "src",
+        "index.ts"
+    ],
+    "ext": "ts,js,json",
+    "exec": "npx ts-node --esm index.ts",
+    "env": {
+        "NODE_ENV": "development"
+    }
+}
